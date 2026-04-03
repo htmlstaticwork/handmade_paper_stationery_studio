@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foliage Studio | Handmade Paper & Stationery</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta name="description"
         content="Pressed. Crafted. Remembered. Discover artisanal, tactile handmade paper and stationery.">
 
@@ -53,6 +54,7 @@
             <a href="about.html">About</a>
             <a href="journal.html">Journal</a>
             <a href="contact.html">Contact</a>
+            <a href="login.html" class="mobile-only">Sign In</a>
         </nav>
 
         <!-- Right Actions -->
@@ -75,8 +77,8 @@
             </div>
 
             <div class="header-ctas">
-                <!-- Wishlist text inside btn on desktop -->
-                <a href="login.html" class="btn-secondary">Wishlist</a>
+                <!-- Sign in button on desktop -->
+                <a href="login.html" class="btn-secondary">Sign In</a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -148,6 +150,37 @@
                     justify-content: center !important;
                 }
             }
+
+            @media (max-width: 600px) {
+                .hero-images-wrapper {
+                    height: 320px;
+                    margin: 3rem auto 0;
+                    width: 90%;
+                }
+
+                .hero-img-single {
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    transform: none;
+                    margin: 0 auto;
+                }
+
+                @keyframes floatHeroImage {
+
+                    0%,
+                    100% {
+                        transform: translateY(0) rotate(-1deg);
+                    }
+
+                    50% {
+                        transform: translateY(-10px) rotate(1deg);
+                    }
+                }
+            }
+
 
             .hero-images-wrapper {
                 position: relative;
@@ -318,7 +351,8 @@
                     <a href="about.html" class="btn-secondary" style="margin-top: 2rem;">Read Our Process</a>
                 </div>
                 <div class="about-images stagger-item">
-                    <img src="assets/images/our_studio_story.png" alt="Artisanal paper making process" class="about-img-single">
+                    <img src="assets/images/our_studio_story.png" alt="Artisanal paper making process"
+                        class="about-img-single">
                 </div>
             </div>
         </section>
@@ -339,7 +373,10 @@
             </div>
 
             <div class="grid grid-2 feature-grid stagger-container">
-                <div class="card card-align-left stagger-item">
+                <div class="card stagger-item">
+                    <div class="card-image-wrap">
+                        <img src="assets/images/cotton_rag.png" alt="100% Cotton Rag">
+                    </div>
                     <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -350,7 +387,10 @@
                     <p style="margin-top:0.5rem;">Archival quality, acid-free paper pulped from textile offcuts. Kind to
                         the earth, magnificent to hold.</p>
                 </div>
-                <div class="card card-align-right stagger-item">
+                <div class="card stagger-item">
+                    <div class="card-image-wrap">
+                        <img src="assets/images/botanical_paper.png" alt="Botanical Inclusions">
+                    </div>
                     <!-- Lucide leaf -->
                     <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -362,7 +402,10 @@
                     <p style="margin-top:0.5rem;">Real, hand-foraged leaves and petals trapped within the fibers. Each
                         sheet is a unique landscape.</p>
                 </div>
-                <div class="card card-align-left stagger-item">
+                <div class="card stagger-item">
+                    <div class="card-image-wrap">
+                        <img src="assets/images/deckled_edges.png" alt="Deckled Edges">
+                    </div>
                     <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -373,7 +416,10 @@
                     <p style="margin-top:0.5rem;">True deckle edges naturally formed at the vat, offering that
                         authentic, untamed organic finish.</p>
                 </div>
-                <div class="card card-align-right stagger-item">
+                <div class="card stagger-item">
+                    <div class="card-image-wrap">
+                        <img src="assets/images/calligraphy_ready.png" alt="Calligraphy Ready">
+                    </div>
                     <!-- Pen tool/nib replacement using edit/feather -->
                     <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -499,6 +545,12 @@
             </div>
         </div>
     </footer>
+    <!-- Move to Top Button -->
+    <button class="move-to-top" id="moveToTop" aria-label="Move to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m18 15-6-6-6 6" />
+        </svg>
+    </button>
 </body>
 
 </html>

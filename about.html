@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Foliage Studio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,6 +132,7 @@
             <a href="about.html" class="active">About</a>
             <a href="journal.html">Journal</a>
             <a href="contact.html">Contact</a>
+            <a href="login.html" class="mobile-only">Sign In</a>
         </nav>
 
         <div class="header-actions">
@@ -151,7 +154,7 @@
             </div>
 
             <div class="header-ctas">
-                <a href="login.html" class="btn-secondary">Wishlist</a>
+                <a href="login.html" class="btn-secondary">Sign In</a>
             </div>
 
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -277,8 +280,9 @@
                 style="max-width: 600px; margin: 0 auto; position: relative; z-index: 2;">
                 <h2 class="stagger-item" style="color:var(--color-primary); font-size: 3rem; margin-bottom: 1rem;">
                     Experience the Grain</h2>
-                <p class="stagger-item" style="color: var(--text-faint); margin-bottom: 2rem;">Holding it changes
+                <p class="stagger-item" style="color: #F7F0E6; opacity: 0.8; margin-bottom: 2rem;">Holding it changes
                     everything. Commission a custom batch today.</p>
+
                 <a href="contact.html" class="btn-primary stagger-item">Get in Touch</a>
             </div>
         </section>
@@ -378,6 +382,12 @@
             });
         });
     </script>
+    <!-- Move to Top Button -->
+    <button class="move-to-top" id="moveToTop" aria-label="Move to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m18 15-6-6-6 6" />
+        </svg>
+    </button>
 </body>
 
 </html>

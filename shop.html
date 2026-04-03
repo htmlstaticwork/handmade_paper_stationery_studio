@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop | Foliage Studio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +36,7 @@
             <a href="about.html">About</a>
             <a href="journal.html">Journal</a>
             <a href="contact.html">Contact</a>
+            <a href="login.html" class="mobile-only">Sign In</a>
         </nav>
 
         <div class="header-actions">
@@ -54,7 +57,7 @@
             </div>
 
             <div class="header-ctas">
-                <a href="login.html" class="btn-secondary">Wishlist</a>
+                <a href="login.html" class="btn-secondary">Sign In</a>
             </div>
 
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -79,7 +82,19 @@
 
         <!-- SHOP LAYOUT -->
         <section class="stagger-container" style="padding: 4rem 2rem;">
+            <!-- Filter Toggle for Mobile -->
+            <button class="filter-toggle-btn mobile-only" id="filterToggleBtn"
+                style="margin-bottom: 1.5rem; display: none; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-primary); background: var(--bg-card); border: 1px solid var(--color-primary); border-radius: var(--radius-sm); cursor: pointer;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-filter">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                </svg>
+                Show Filters
+            </button>
+
             <div class="shop-layout stagger-item">
+
                 <!-- Sidebar Filter -->
                 <aside class="filter-sidebar">
                     <div class="filter-group">
@@ -107,7 +122,8 @@
                     <!-- Product 1 -->
                     <div class="product-card">
                         <a href="product.html">
-                            <img src="assets/images/prod_sage.png" alt="Sage Pressed Cotton Suite" class="product-image">
+                            <img src="assets/images/prod_sage.png" alt="Sage Pressed Cotton Suite"
+                                class="product-image">
                         </a>
                         <div class="product-info">
                             <a href="product.html">
@@ -116,7 +132,7 @@
                             <div class="price">$145.00</div>
                             <div class="product-actions">
                                 <button class="btn-primary" style="flex:1;">Add to Cart</button>
-                                <button class="btn-secondary" style="padding: 13px 15px;" aria-label="Wishlist">
+                                <button class="btn-secondary" aria-label="Wishlist">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round">
@@ -140,7 +156,7 @@
                             <div class="price">$65.00</div>
                             <div class="product-actions">
                                 <button class="btn-primary" style="flex:1;">Add to Cart</button>
-                                <button class="btn-secondary" style="padding: 13px 15px;" aria-label="Wishlist">
+                                <button class="btn-secondary" aria-label="Wishlist">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round">
@@ -164,7 +180,7 @@
                             <div class="price">$110.00</div>
                             <div class="product-actions">
                                 <button class="btn-primary" style="flex:1;">Add to Cart</button>
-                                <button class="btn-secondary" style="padding: 13px 15px;" aria-label="Wishlist">
+                                <button class="btn-secondary" aria-label="Wishlist">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round">
@@ -179,7 +195,8 @@
                     <!-- Product 4 -->
                     <div class="product-card">
                         <a href="product.html">
-                            <img src="assets/images/prod_envelopes.png" alt="Deckled Envelope Bundle" class="product-image">
+                            <img src="assets/images/prod_envelopes.png" alt="Deckled Envelope Bundle"
+                                class="product-image">
                         </a>
                         <div class="product-info">
                             <a href="product.html">
@@ -188,7 +205,7 @@
                             <div class="price">$45.00</div>
                             <div class="product-actions">
                                 <button class="btn-primary" style="flex:1;">Add to Cart</button>
-                                <button class="btn-secondary" style="padding: 13px 15px;" aria-label="Wishlist">
+                                <button class="btn-secondary" aria-label="Wishlist">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round">
@@ -349,6 +366,12 @@
             </div>
         </div>
     </footer>
+    <!-- Move to Top Button -->
+    <button class="move-to-top" id="moveToTop" aria-label="Move to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m18 15-6-6-6 6" />
+        </svg>
+    </button>
 </body>
 
 </html>

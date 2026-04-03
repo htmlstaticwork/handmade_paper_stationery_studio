@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Collection | Foliage Studio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +37,7 @@
             <a href="about.html">About</a>
             <a href="journal.html">Journal</a>
             <a href="contact.html">Contact</a>
+            <a href="login.html" class="mobile-only">Sign In</a>
         </nav>
 
         <div class="header-actions">
@@ -55,7 +58,7 @@
             </div>
 
             <div class="header-ctas">
-                <a href="login.html" class="btn-secondary">Wishlist</a>
+                <a href="login.html" class="btn-secondary">Sign In</a>
             </div>
 
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -90,7 +93,7 @@
 
         <!-- Home-2 Shop Section: Horizontal Scroll -->
         <section class="section-overlap z-1" style="background:var(--bg-surface); padding-top:4rem;">
-            <div class="stagger-container" style="padding-left: 2rem;">
+            <div class="stagger-container" style="text-align: center;">
                 <h2 class="stagger-item">Curated Sets</h2>
                 <h3 class="stagger-item">Swipe to explore</h3>
             </div>
@@ -194,8 +197,10 @@
             <div class="stagger-container" style="position:relative; z-index:2;">
                 <h3 class="stagger-item" style="color:var(--color-primary);">Join the Registry</h3>
                 <h2 class="stagger-item" style="color:#F7F0E6; margin: 1rem 0;">Bespoke Inquiries Open</h2>
-                <p class="stagger-item" style="color:var(--text-muted); max-width:500px; margin: 0 auto 2rem;">Taking
+                <p class="stagger-item" style="color:#F7F0E6; opacity: 0.8; max-width:500px; margin: 0 auto 2rem;">
+                    Taking
                     commissions for custom dyed lots and personalized botanical inclusions.</p>
+
                 <a href="contact.html" class="btn-primary stagger-item">Request a Sample Book</a>
             </div>
         </section>
@@ -276,6 +281,12 @@
             </div>
         </div>
     </footer>
+    <!-- Move to Top Button -->
+    <button class="move-to-top" id="moveToTop" aria-label="Move to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m18 15-6-6-6 6" />
+        </svg>
+    </button>
 </body>
 
 </html>

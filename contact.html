@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Studio | Foliage Studio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +36,7 @@
             <a href="about.html">About</a>
             <a href="journal.html">Journal</a>
             <a href="contact.html" class="active">Contact</a>
+            <a href="login.html" class="mobile-only">Sign In</a>
         </nav>
 
         <div class="header-actions">
@@ -55,7 +58,7 @@
             </div>
 
             <div class="header-ctas">
-                <a href="login.html" class="btn-secondary">Wishlist</a>
+                <a href="login.html" class="btn-secondary">Sign In</a>
             </div>
 
             <button class="mobile-menu-btn" aria-label="Menu">
@@ -78,11 +81,13 @@
                 shared love of paper.</p>
         </section>
 
-        <section class="stagger-container" style="padding: 4rem 2rem 8rem;">
+        <section class="stagger-container" style="padding: 3rem 1rem 6rem;">
+
             <div class="contact-grid stagger-item">
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper">
-                    <h3 style="margin-bottom: 2rem; color:var(--text-ink);">Send an Inquiry</h3>
+                    <h3 style="margin-bottom: 2rem; color:var(--text-ink); text-align: center;">Send an Inquiry</h3>
+
                     <form onsubmit="event.preventDefault()">
                         <div class="form-group">
                             <label>Name</label>
@@ -158,12 +163,13 @@
                     </div>
 
                     <!-- SOCIAL CONNECTIVITY SECTION -->
-                    <div
-                        style="margin-top: 4rem; padding: 3rem; background: var(--bg-card); border-radius: var(--radius-lg); text-align: center;">
+                    <div class="contact-social-card" style="margin-top: 4rem; text-align: center;">
+
                         <h4
                             style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; color: var(--color-primary); margin-bottom: 2rem;">
                             Follow the Journey</h4>
-                        <div style="display: flex; justify-content: center; gap: 3rem;">
+                        <div class="social-links-wrap" style="display: flex; justify-content: center; gap: 1.5rem;">
+
                             <a href="#"
                                 style="color: #E4405F; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-decoration: none;">
                                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -273,6 +279,12 @@
             </div>
         </div>
     </footer>
+    <!-- Move to Top Button -->
+    <button class="move-to-top" id="moveToTop" aria-label="Move to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="m18 15-6-6-6 6" />
+        </svg>
+    </button>
 </body>
 
 </html>
