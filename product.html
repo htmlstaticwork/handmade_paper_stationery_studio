@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sage Pressed Cotton Suite | Foliage Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;500;600&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js" defer></script>
+    <style>
+        .product-page-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .product-gallery {
+            position: sticky;
+            top: 100px;
+        }
+
+        .product-main-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            border: 0.5px solid rgba(28, 20, 16, 0.08);
+            box-shadow: var(--shadow-press);
+        }
+
+        .product-details {
+            padding: 2rem 0;
+        }
+
+        .product-page-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--text-ink);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .product-page-price {
+            font-family: var(--font-mono);
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+        }
+
+        .product-desc {
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--bg-deep);
+            border-radius: var(--radius-sm);
+            width: fit-content;
+            margin-bottom: 2rem;
+        }
+
+        .qty-btn {
+            background: transparent;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            color: var(--text-ink);
+            font-size: 1.2rem;
+            transition: background 0.2s;
+        }
+
+        .qty-btn:hover {
+            background: var(--bg-surface);
+        }
+
+        .qty-input {
+            width: 50px;
+            text-align: center;
+            border: none;
+            background: transparent;
+            color: var(--text-ink);
+            font-family: var(--font-body);
+            font-weight: 500;
+        }
+
+        .product-action-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-action-row .btn-primary {
+            flex: 1;
+            padding: 16px;
+            font-size: 0.85rem;
+        }
+
+        .product-meta {
+            border-top: 1px solid var(--bg-deep);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: var(--text-ink);
+            min-width: 80px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 900px) {
+            .product-page-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .product-gallery {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="index.html" class="brand-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
+                <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+            </svg>
+            Foliage Studio
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="home-2.html">Home 2</a>
+            <a href="shop.html">Shop</a>
+            <a href="product.html" class="active">Product</a>
+            <a href="about.html">About</a>
+            <a href="journal.html">Journal</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="header-icons">
+                <button class="header-icon rtl-toggle" aria-label="Toggle RTL">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M4 12h16" />
+                        <path d="M4 12l4 4" />
+                        <path d="M4 12l4-4" />
+                        <path d="m20 18-4 4-4-4" />
+                    </svg>
+                </button>
+                <button class="header-icon theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="header-ctas">
+                <a href="login.html" class="btn-secondary">Wishlist</a>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <svg class="lucide lucide-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main style="padding: 4rem 2rem;">
+        <div class="product-page-layout stagger-container">
+            <!-- Gallery -->
+            <div class="product-gallery stagger-item">
+                <img src="assets/images/prod_sage.png" alt="Sage Pressed Cotton Suite" class="product-main-img">
+            </div>
+
+            <!-- Details -->
+            <div class="product-details stagger-item">
+                <h1 class="product-page-title">Sage Pressed Cotton Suite</h1>
+                <div class="product-page-price">$145.00</div>
+
+                <div class="product-desc">
+                    <p>A serene, earthy green suite infused with subtle botanical fragments. Each piece is pulled
+                        individually by hand, assuring a rich, natural deckled edge and an incomparable textural
+                        surface.</p>
+                    <p style="margin-top: 1rem;">Internally sized for calligraphy, fountain pen, and letterpress
+                        compatibility.</p>
+                </div>
+
+                <label style="display:block; margin-bottom: 0.5rem;">Quantity</label>
+                <div class="quantity-selector">
+                    <button class="qty-btn" aria-label="Decrease quantity">-</button>
+                    <input type="number" class="qty-input" value="1" min="1" aria-label="Quantity">
+                    <button class="qty-btn" aria-label="Increase quantity">+</button>
+                </div>
+
+                <div class="product-action-row">
+                    <button class="btn-primary">Add to Collection</button>
+                    <button class="btn-secondary" style="padding: 16px 20px;" aria-label="Wishlist">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Material</span>
+                        <span>100% Recycled Cotton Rag</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Weight</span>
+                        <span>300 GSM</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Includes</span>
+                        <span>50 Sheets, Cards & Envelopes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PRODUCT SECTION 1: TACTILE DETAIL -->
+        <section class="section-overlap z-1 paper-texture" style="background:var(--bg-surface); padding: 8rem 2rem;">
+            <div class="grid grid-2 stagger-container" style="align-items: center;">
+                <div class="stagger-item">
+                    <img src="assets/images/prod_macro.png" alt="Macro Paper Texture"
+                        style="width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-lift);">
+                </div>
+                <div class="stagger-item" style="padding-left: 2rem;">
+                    <h3>The Edge. The Fiber.</h3>
+                    <h2 style="margin: 1.5rem 0;">A Decidedly Tactile Experience</h2>
+                    <p>There is No substitute for the hand. Our Sage collection features a true natural deckle—the
+                        feathered, untamed border formed only at the moment of the vat pull. When your fingers meet
+                        these fibers, you'll understand why we refuse to trim our most precious lots.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT SECTION 2: USAGE / COMPATIBILITY -->
+        <section class="section-overlap z-2"
+            style="background:var(--bg-primary); padding: 6rem 2rem; margin-top: -40px;">
+            <div class="section-divider-top divider-bg-primary">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="grid grid-2 stagger-container" style="align-items: center;">
+                <div class="stagger-item" style="padding-right: 2rem;">
+                    <h3>For the Scribe</h3>
+                    <h2 style="margin: 1.5rem 0;">Internally Sized for Ink</h2>
+                    <p>Unlike raw pulp, our paper is delicately sized to ensure compatibility with traditional fountain
+                        pen inks, calligraphy nibs, and heavy letterpress impressions. Every stroke remains crisp,
+                        resisting spidering and bleed-through while celebrating the slight resistance of the cotton
+                        fluff.</p>
+                </div>
+                <div class="stagger-item">
+                    <img src="assets/images/prod_writing.png" alt="Calligraphy on Handmade Paper"
+                        style="width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-lift);">
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT SECTION 3: HERITAGE -->
+        <section class="section-overlap z-3"
+            style="background:var(--bg-surface); padding: 8rem 2rem; margin-top: -50px;">
+            <div class="section-divider-top divider-bg-surface">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="stagger-container" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h3 class="stagger-item">Earth's Own Palette</h3>
+                <h2 class="stagger-item" style="margin: 1rem 0;">Archival Cotton Heritage</h2>
+                <p class="stagger-item">Pulped from 100% recycled cotton textile offcuts, our 300 GSM Sage suite is
+                    naturally archival. It contains no bleach, no acid, and no artificial lignin. It is paper built to
+                    be archived—holding your memories as vividly in a century as it does today.</p>
+                <div class="stagger-item" style="margin-top: 3rem;">
+                    <img src="assets/images/prod_heritage.png" alt="Raw Cotton Heritage"
+                        style="width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-float);">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
+                        <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+                    </svg>
+                    Foliage Studio
+                </div>
+                <p>Pressed. Crafted. Remembered.</p>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Explore</h3>
+                <nav class="footer-links">
+                    <a href="shop.html">Shop All</a>
+                    <a href="home-2.html">Premium Layout</a>
+                    <a href="product.html">Product Demo</a>
+                    <a href="pricing.html">Pricing Strategy</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Studio</h3>
+                <nav class="footer-links">
+                    <a href="contact.html">Contact Us</a>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Sign Up</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="footer-title">The Journal</h3>
+                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.
+                </p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="Email Address" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Foliage Studio. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon social-facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-twitter" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            fill="none" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-linkedin" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

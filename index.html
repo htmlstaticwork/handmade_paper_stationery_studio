@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foliage Studio | Handmade Paper & Stationery</title>
+    <meta name="description"
+        content="Pressed. Crafted. Remembered. Discover artisanal, tactile handmade paper and stationery.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;500;600&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- SVG Definitions -->
+    <svg style="position: absolute; width: 1px; height: 1px; top: -9999px;" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <!-- Ink Bleed Clip Path -->
+            <clipPath id="ink-bleed">
+                <rect width="100%" height="100%" x="-100%" y="0">
+                    <animate attributeName="x" from="-100%" to="0%" dur="2s" fill="freeze" calcMode="spline"
+                        keySplines="0.4 0 0.2 1" keyTimes="0;1" />
+                </rect>
+            </clipPath>
+        </defs>
+    </svg>
+
+    <!-- Global Header -->
+    <header class="site-header">
+        <a href="index.html" class="brand-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
+                <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+            </svg>
+            Foliage Studio
+        </a>
+
+        <!-- Main Nav -->
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="home-2.html">Home 2</a>
+            <a href="shop.html">Shop</a>
+            <a href="product.html">Product</a>
+            <a href="about.html">About</a>
+            <a href="journal.html">Journal</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="header-actions">
+            <!-- Toggles (Dark + RTL) -->
+            <div class="header-icons">
+                <button class="header-icon rtl-toggle" aria-label="Toggle RTL">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M4 12h16" />
+                        <path d="M4 12l4 4" />
+                        <path d="M4 12l4-4" />
+                        <path d="m20 18-4 4-4-4" />
+                    </svg>
+                </button>
+                <button class="header-icon theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="header-ctas">
+                <!-- Wishlist text inside btn on desktop -->
+                <a href="login.html" class="btn-secondary">Wishlist</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <svg class="lucide lucide-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION 1: HERO (NEW UNIQUE DESIGN) -->
+        <style>
+            .new-hero {
+                min-height: 90vh;
+                display: flex;
+                align-items: center;
+                position: relative;
+                padding: 6rem 2rem;
+                overflow: hidden;
+                background-color: var(--bg-surface);
+            }
+
+            .new-hero-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+                max-width: 1300px;
+                margin: 0 auto;
+                align-items: center;
+                position: relative;
+                z-index: 5;
+            }
+
+            @media (max-width: 900px) {
+                .new-hero-grid {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                }
+            }
+
+            .hero-text-content h1 {
+                font-size: clamp(3rem, 7vw, 5.5rem);
+                line-height: 1.1;
+                color: var(--text-ink);
+                margin-bottom: 2rem;
+                font-style: normal;
+            }
+
+            .hero-text-content p {
+                font-size: 1.25rem;
+                color: var(--text-muted);
+                max-width: 500px;
+                margin-bottom: 3rem;
+            }
+
+            @media (max-width: 900px) {
+                .hero-text-content p {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .hero-ctas {
+                    justify-content: center !important;
+                }
+            }
+
+            .hero-images-wrapper {
+                position: relative;
+                height: 600px;
+            }
+
+            .hero-img-single {
+                position: absolute;
+                width: 90%;
+                height: 90%;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                object-fit: cover;
+                border-radius: var(--radius-lg);
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+                animation: floatHeroImage 8s ease-in-out infinite;
+                z-index: 2;
+            }
+
+            @keyframes floatHeroImage {
+                0% {
+                    transform: translateY(-50%) rotate(-1deg);
+                }
+
+                50% {
+                    transform: translateY(-52%) rotate(1deg);
+                }
+
+                100% {
+                    transform: translateY(-50%) rotate(-1deg);
+                }
+            }
+
+            .sweep-in {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+                animation: sweepInText 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            }
+
+            @keyframes sweepInText {
+                to {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+
+            .fade-up-delay {
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeUpItem 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+                animation-delay: 0.8s;
+            }
+
+            .fade-up-delay-2 {
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeUpItem 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+                animation-delay: 1.1s;
+            }
+
+            @keyframes fadeUpItem {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .hero-blur-blob {
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(circle, var(--color-primary-light) 0%, transparent 70%);
+                top: -200px;
+                right: -200px;
+                opacity: 0.5;
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            [data-theme="dark"] .new-hero {
+                background-color: var(--bg-dark-surface);
+            }
+
+
+
+            .about-img-single {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-lift);
+            }
+        </style>
+
+        <section class="new-hero paper-texture">
+            <div class="hero-blur-blob"></div>
+            <div class="new-hero-grid">
+                <div class="hero-text-content">
+                    <h1 class="sweep-in">The Weight<br>of Words</h1>
+                    <p class="fade-up-delay">Elevate your correspondence with handmade, wildly textured paper that
+                        breathes history into every stroke of the pen.</p>
+                    <div class="hero-ctas fade-up-delay-2" style="justify-content: flex-start;">
+                        <a href="shop.html" class="btn-primary">Shop The Collection</a>
+                        <a href="about.html" class="btn-secondary">Our Manifesto</a>
+                    </div>
+                </div>
+                <div class="hero-images-wrapper">
+                    <img class="hero-img-single sweep-in" src="assets/images/handmade_paper_hero.png"
+                        alt="Handmade paper and fine stationery">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SHOP CATEGORIES (Overlaps Hero -60px, z-index 2) -->
+        <section class="section-overlap z-2" style="background:var(--bg-primary);">
+            <div class="section-divider-top divider-bg-primary">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
+                        class="shape-fill" opacity=".25" />
+                    <path
+                        d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5V0z"
+                        class="shape-fill" opacity=".5" />
+                    <path
+                        d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-8.13 84.6-24.22 127.32-34.42C645.72-2.19 686.91 1 729 9c42.86 8.1 85.63 21.84 128.53 29.8 40.85 7.57 82 4.19 123.1-2.9C1043.14 24.57 1121.24 9 1200 24.83V0z"
+                        class="shape-fill" />
+                </svg>
+            </div>
+
+            <div class="grid grid-3 stagger-container">
+                <a href="shop.html" class="category-card stagger-item card">
+                    <img src="assets/images/notebooks_category.png" alt="Notebooks">
+                    <div class="category-overlay"></div>
+                    <h2 class="category-title">Notebooks</h2>
+                </a>
+                <a href="shop.html" class="category-card stagger-item card">
+                    <img src="assets/images/wedding_stationery_category.png" alt="Wedding Stationery">
+                    <div class="category-overlay"></div>
+                    <h2 class="category-title">Wedding Stationery</h2>
+                </a>
+                <a href="shop.html" class="category-card stagger-item card">
+                    <img src="assets/images/gift_wraps_category.png" alt="Gift Wraps">
+                    <div class="category-overlay"></div>
+                    <h2 class="category-title">Gift Wraps</h2>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ABOUT / STUDIO STORY (Overlaps Shop -40px, z-index 3) -->
+        <section class="section-overlap z-3 paper-texture" style="background:var(--bg-surface);">
+            <div class="section-divider-top divider-bg-surface">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+
+            <div class="about-split stagger-container">
+                <div class="about-text stagger-item">
+                    <h3>Our Studio Story</h3>
+                    <h2 class="pull-quote">"We believe paper should breathe, hold memory, and whisper to the
+                        touch."<span class="ink-dot"></span></h2>
+                    <p>At Foliage Studio, every sheet is pulled by hand, slowly dried, and meticulously inspected. We
+                        merge traditional vat-making techniques with contemporary design to create heirloom quality
+                        pieces.</p>
+                    <p>There is magic in the imperfections—the deckled edges, the stray botanical fragments, the subtle
+                        variations in thickness. This is where character is born.</p>
+                    <a href="about.html" class="btn-secondary" style="margin-top: 2rem;">Read Our Process</a>
+                </div>
+                <div class="about-images stagger-item">
+                    <img src="assets/images/our_studio_story.png" alt="Artisanal paper making process" class="about-img-single">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FEATURES / CRAFT HIGHLIGHTS (Overlaps About -50px, z-index 4) -->
+        <section class="section-overlap z-4 paper-texture" style="background:var(--bg-primary);">
+            <div class="section-divider-top divider-bg-primary">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 3rem;" class="stagger-container">
+                <h3 class="stagger-item">The Artisan Difference</h3>
+                <h2 class="stagger-item" style="margin-top: 0.5rem;">Why Foliage Studio?</h2>
+            </div>
+
+            <div class="grid grid-2 feature-grid stagger-container">
+                <div class="card card-align-left stagger-item">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 2v20" />
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    </svg>
+                    <h4>100% Cotton Rag</h4>
+                    <p style="margin-top:0.5rem;">Archival quality, acid-free paper pulped from textile offcuts. Kind to
+                        the earth, magnificent to hold.</p>
+                </div>
+                <div class="card card-align-right stagger-item">
+                    <!-- Lucide leaf -->
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                    </svg>
+                    <h4>Botanical Inclusions</h4>
+                    <p style="margin-top:0.5rem;">Real, hand-foraged leaves and petals trapped within the fibers. Each
+                        sheet is a unique landscape.</p>
+                </div>
+                <div class="card card-align-left stagger-item">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect width="20" height="14" x="2" y="5" rx="2" />
+                        <line x1="2" x2="22" y1="10" y2="10" />
+                    </svg>
+                    <h4>Deckled Edges</h4>
+                    <p style="margin-top:0.5rem;">True deckle edges naturally formed at the vat, offering that
+                        authentic, untamed organic finish.</p>
+                </div>
+                <div class="card card-align-right stagger-item">
+                    <!-- Pen tool/nib replacement using edit/feather -->
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                        <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                        <path d="m2 2 7.586 7.586" />
+                        <circle cx="11" cy="11" r="2" />
+                    </svg>
+                    <h4>Calligraphy Ready</h4>
+                    <p style="margin-top:0.5rem;">Internally sized for nib and ink compatibility, preventing spidering
+                        and bleeding on your custom suites.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: TESTIMONIALS -->
+        <section class="section-overlap z-1 testimonials-section" style="background:var(--bg-card); padding-top:4rem;">
+            <div class="stagger-container">
+                <h3 class="stagger-item">Word of Mouth</h3>
+                <div class="testimonial-stack">
+                    <div class="testimonial-card stagger-item">
+                        <span class="quote-mark">“</span>
+                        <p class="testimonial-text">"The paper feels like absolute poetry. I've been using it for all my
+                            high-end wedding invitations and my clients always swoon when they touch the envelopes."</p>
+                        <p class="testimonial-author">Eleanor R.</p>
+                        <p class="testimonial-product">Purchased: Sage Pressed Cotton Suites</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CTA BANNER -->
+        <section class="cta-banner z-2" style="margin-top: -30px;">
+            <div class="cta-banner-bg"></div>
+            <!-- Floating sheet svg top right -->
+            <svg class="floating-sheet-svg" viewBox="0 0 100 100">
+                <path d="M80 10 L20 30 L30 90 L90 70 Z" fill="rgba(247,240,230,0.1)" />
+                <path d="M85 15 L25 35 L35 95 L95 75 Z" fill="rgba(247,240,230,0.15)" />
+            </svg>
+
+            <div class="stagger-container">
+                <h2 class="stagger-item">Crafted Slowly. Sent with Care.</h2>
+                <p class="stagger-item">Join our collector's circle for exclusive releases and studio notes.</p>
+                <a href="shop.html" class="btn-secondary stagger-item">Explore The Collection</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
+                        <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+                    </svg>
+                    Foliage Studio
+                </div>
+                <p>Pressed. Crafted. Remembered.</p>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Explore</h3>
+                <nav class="footer-links">
+                    <a href="shop.html">Shop All</a>
+                    <a href="home-2.html">Premium Layout</a>
+                    <a href="product.html">Product Demo</a>
+                    <a href="pricing.html">Pricing Strategy</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Studio</h3>
+                <nav class="footer-links">
+                    <a href="contact.html">Contact Us</a>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Sign Up</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="footer-title">The Journal</h3>
+                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.
+                </p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="Email Address" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Foliage Studio. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon social-facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-twitter" aria-label="Twitter">
+                    <!-- Standard X logo -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            fill="none" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-linkedin" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

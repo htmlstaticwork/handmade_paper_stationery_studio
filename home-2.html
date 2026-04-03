@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Collection | Foliage Studio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;500;600&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="index.html" class="brand-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
+                <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+            </svg>
+            Foliage Studio
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="home-2.html" class="active">Home 2</a>
+            <a href="shop.html">Shop</a>
+            <a href="product.html">Product</a>
+            <a href="about.html">About</a>
+            <a href="journal.html">Journal</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="header-icons">
+                <button class="header-icon rtl-toggle" aria-label="Toggle RTL">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M4 12h16" />
+                        <path d="M4 12l4 4" />
+                        <path d="M4 12l4-4" />
+                        <path d="m20 18-4 4-4-4" />
+                    </svg>
+                </button>
+                <button class="header-icon theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="header-ctas">
+                <a href="login.html" class="btn-secondary">Wishlist</a>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <svg class="lucide lucide-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home-2 Hero Vertical Split -->
+        <section class="home-2-hero">
+            <div class="h2-hero-img-container">
+                <img src="assets/images/archive_hero.png" alt="Premium Collection" class="h2-hero-img">
+            </div>
+            <div class="h2-hero-content paper-texture">
+                <div class="stagger-container">
+                    <h3 class="stagger-item">The Archive Edition</h3>
+                    <h1 class="stagger-item" style="margin: 1rem 0;">Exquisite Weight. Deep Impression.</h1>
+                    <p class="stagger-item" style="max-width: 400px; margin-bottom: 2.5rem; color: var(--text-ink);">Our
+                        most rigorous, dense cotton papers, created specifically for fine art printmakers and heavy hit
+                        letterpress.</p>
+                    <a href="shop.html" class="btn-primary stagger-item">View The Archive</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Home-2 Shop Section: Horizontal Scroll -->
+        <section class="section-overlap z-1" style="background:var(--bg-surface); padding-top:4rem;">
+            <div class="stagger-container" style="padding-left: 2rem;">
+                <h2 class="stagger-item">Curated Sets</h2>
+                <h3 class="stagger-item">Swipe to explore</h3>
+            </div>
+
+            <div class="horiz-scroll-container stagger-container" style="margin-top:2rem;">
+                <div class="horiz-card category-card card stagger-item">
+                    <img src="assets/images/set_minimalist.png" alt="Set 1">
+                    <div class="category-overlay"></div>
+                    <h2 class="category-title">Minimalist Suite</h2>
+                </div>
+                <div class="horiz-card category-card card stagger-item">
+                    <img src="assets/images/set_botanical.png" alt="Set 2">
+                    <div class="category-overlay"></div>
+                    <h2 class="category-title">Botanical Ed.</h2>
+                </div>
+                <div class="horiz-card category-card card stagger-item">
+                    <img src="assets/images/set_midnight.png" alt="Set 3">
+                    <div class="category-overlay"></div>
+                    <h2 class="category-title">Midnight Ink</h2>
+                </div>
+                <div class="horiz-card category-card card stagger-item">
+                    <img src="assets/images/set_raw_cotton.png" alt="Set 4">
+                    <div class="category-overlay"></div>
+                    <h2 class="category-title">Raw Cotton</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Home-2 About: Editorial magazine style, typography only -->
+        <section class="section-overlap z-2 paper-texture" style="background:var(--bg-card);">
+            <div class="section-divider-top divider-bg-card">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+
+            <div class="editorial-about stagger-container">
+                <h3 class="stagger-item">The Manifesto</h3>
+                <h2 class="pull-quote stagger-item" style="color:var(--text-ink); margin: 3rem 0;">A return to slowness.
+                    A departure from the digital ephemeral. We do not manufacture; we cultivate.</h2>
+                <div style="column-count: 2; column-gap: 3rem; text-align: left;" class="stagger-item">
+                    <p>In a world of rigid perfection, Foliage Studio champions the accidental. The beauty of a deckled
+                        edge is that it cannot be precisely programmed. It is born from water pulling away from pulp, a
+                        natural separation that leaves a feathered, untamed border upon every single sheet.</p>
+                    <p>It demands to be felt. Your fingers understand the value before your eyes process the shade. The
+                        weight matters. The absorbency matters. We dedicate our craft to ensuring that when you press
+                        ink or foil into these fibers, they hold not just your words, but the gravity of your intent.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Home-2 Features: Icon-less, text stats -->
+        <section class="section-overlap z-3" style="background:var(--bg-primary); padding-top: 4rem;">
+            <div class="stagger-container">
+                <div class="text-stats">
+                    <div class="stagger-item">
+                        <div class="stat-num">100%</div>
+                        <div class="stat-label">Archival Cotton</div>
+                    </div>
+                    <div class="stagger-item">
+                        <div class="stat-num">0%</div>
+                        <div class="stat-label">Bleach & Acid</div>
+                    </div>
+                    <div class="stagger-item">
+                        <div class="stat-num">4,000+</div>
+                        <div class="stat-label">Sheets Pulled</div>
+                    </div>
+                    <div class="stagger-item">
+                        <div class="stat-num">7</div>
+                        <div class="stat-label">Days to Cure</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Home-2 Testimonials: Single large card -->
+        <section class="section-overlap z-4" style="background:var(--bg-surface); padding: 6rem 2rem;">
+            <div class="stagger-container">
+                <div class="testimonial-card stagger-item" style="max-width: 900px; margin: 0 auto; text-align:center;">
+                    <span class="quote-mark">“</span>
+                    <h2 class="pull-quote" style="margin-top:0;">The tactile feedback from their sage collection
+                        entirely elevated our winter tablescapes. It felt impossible to bend without reverence.</h2>
+                    <p class="testimonial-author">Claire M., Creative Director</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Home-2 CTA: Dark Variant -->
+        <section class="cta-banner z-5" style="background:var(--bg-dark); color:#F7F0E6; margin-top:-50px;">
+            <div class="section-divider-top" style="fill:var(--bg-dark);">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        fill="var(--bg-dark)"></path>
+                </svg>
+            </div>
+
+            <div class="stagger-container" style="position:relative; z-index:2;">
+                <h3 class="stagger-item" style="color:var(--color-primary);">Join the Registry</h3>
+                <h2 class="stagger-item" style="color:#F7F0E6; margin: 1rem 0;">Bespoke Inquiries Open</h2>
+                <p class="stagger-item" style="color:var(--text-muted); max-width:500px; margin: 0 auto 2rem;">Taking
+                    commissions for custom dyed lots and personalized botanical inclusions.</p>
+                <a href="contact.html" class="btn-primary stagger-item">Request a Sample Book</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
+                        <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+                    </svg>
+                    Foliage Studio
+                </div>
+                <p>Pressed. Crafted. Remembered.</p>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Explore</h3>
+                <nav class="footer-links">
+                    <a href="shop.html">Shop All</a>
+                    <a href="home-2.html">Premium Layout</a>
+                    <a href="product.html">Product Demo</a>
+                    <a href="pricing.html">Pricing Strategy</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Studio</h3>
+                <nav class="footer-links">
+                    <a href="contact.html">Contact Us</a>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Sign Up</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="footer-title">The Journal</h3>
+                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.
+                </p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="Email Address" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Foliage Studio. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon social-facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-twitter" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            fill="none" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-linkedin" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

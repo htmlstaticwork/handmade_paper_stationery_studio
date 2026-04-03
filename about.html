@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Foliage Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;500;600&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/script.js" defer></script>
+    <style>
+        /* Unique Animations for About Page */
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal-right.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slow-zoom {
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+        }
+
+        .slow-zoom img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.2);
+            transition: transform 2.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .slow-zoom.in-view img {
+            transform: scale(1);
+        }
+
+        .float-pulse {
+            animation: aboutFloatPulse 6s ease-in-out infinite;
+        }
+
+        @keyframes aboutFloatPulse {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.02);
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .about-values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            background: var(--bg-card);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: var(--radius-lg);
+            border: 0.5px solid rgba(28, 20, 16, 0.08);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-primary-light);
+            z-index: -1;
+            transition: top 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .value-card:hover::before {
+            top: 0;
+        }
+
+        .value-card:hover h3 {
+            color: var(--color-primary-dark);
+        }
+
+        .value-card h3 {
+            transition: color 0.4s ease;
+        }
+
+        @media (max-width: 900px) {
+            .about-values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="index.html" class="brand-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
+                <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+            </svg>
+            Foliage Studio
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="home-2.html">Home 2</a>
+            <a href="shop.html">Shop</a>
+            <a href="product.html">Product</a>
+            <a href="about.html" class="active">About</a>
+            <a href="journal.html">Journal</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <!-- Toggles -->
+            <div class="header-icons">
+                <button class="header-icon rtl-toggle" aria-label="Toggle RTL">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M4 12h16" />
+                        <path d="M4 12l4 4" />
+                        <path d="M4 12l4-4" />
+                        <path d="m20 18-4 4-4-4" />
+                    </svg>
+                </button>
+                <button class="header-icon theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="header-ctas">
+                <a href="login.html" class="btn-secondary">Wishlist</a>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <svg class="lucide lucide-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ABOUT SECTION 1: UNIQUE HERO TEXT REVEAL -->
+        <section class="page-header paper-texture stagger-container" style="padding-bottom: 8rem; position: relative;">
+            <svg class="floating-sheet-svg float-pulse" style="left: 10%; top: 20%; opacity: 0.3;"
+                viewBox="0 0 100 100">
+                <path d="M80 10 L20 30 L30 90 L90 70 Z" fill="var(--color-primary-light)" />
+            </svg>
+
+            <h1 class="stagger-item reveal-right" style="font-size: clamp(3rem, 7vw, 6rem);">The Hands<br>Behind the Vat
+            </h1>
+            <p class="stagger-item"
+                style="margin-top:1rem; max-width: 600px; margin-left:auto; margin-right:auto; font-size: 1.2rem;">
+                Every sheet tells a story of intention, water, and time.
+            </p>
+        </section>
+
+        <!-- ABOUT SECTION 2: SLOW ZOOM PROCESS -->
+        <section class="section-overlap z-2" style="background:var(--bg-surface);">
+            <div class="section-divider-top divider-bg-surface">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
+                        class="shape-fill" opacity=".25" />
+                    <path
+                        d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5V0z"
+                        class="shape-fill" opacity=".5" />
+                    <path
+                        d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-8.13 84.6-24.22 127.32-34.42C645.72-2.19 686.91 1 729 9c42.86 8.1 85.63 21.84 128.53 29.8 40.85 7.57 82 4.19 123.1-2.9C1043.14 24.57 1121.24 9 1200 24.83V0z"
+                        class="shape-fill" />
+                </svg>
+            </div>
+
+            <div class="grid grid-2 stagger-container" style="align-items: center;">
+                <div class="slow-zoom stagger-item" style="height: 500px;">
+                    <img src="assets/images/about_methodology.png" alt="Studio Process">
+                </div>
+                <div class="stagger-item" style="padding: 2rem;">
+                    <h3 style="color:var(--text-ink);">The Methodology</h3>
+                    <h2 style="margin-bottom: 2rem; color: var(--color-primary);">Reclaiming the Archival</h2>
+                    <p>We source premium textile offcuts, breaking them down into natural cotton fibers. Through a
+                        painstaking process of water immersion, pressing, and slow drying, we transform discarded
+                        remnants into heirloom canvases waiting for your pen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION 3: ANIMATED VALUES GRID -->
+        <section class="section-overlap z-3 paper-texture" style="background:var(--bg-primary);">
+            <div class="section-divider-top divider-bg-primary">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+
+            <div class="stagger-container" style="text-align: center; max-width: 1000px; margin: 0 auto;">
+                <h2 class="stagger-item">Our Core Axioms</h2>
+                <div class="about-values-grid">
+                    <div class="value-card stagger-item">
+                        <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                        <h3 style="margin-top: 1rem; font-family:var(--font-display); font-size:1.8rem;">Sustainability
+                        </h3>
+                        <p style="margin-top: 0.5rem;">Foraging local botanicals and utilizing zero-chemical pulp
+                            reduction.</p>
+                    </div>
+                    <div class="value-card stagger-item">
+                        <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                        <h3 style="margin-top: 1rem; font-family:var(--font-display); font-size:1.8rem;">Tactility</h3>
+                        <p style="margin-top: 0.5rem;">Ensuring every sheet has the weight and tooth to challenge
+                            digital perfection.</p>
+                    </div>
+                    <div class="value-card stagger-item">
+                        <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                        <h3 style="margin-top: 1rem; font-family:var(--font-display); font-size:1.8rem;">Longevity</h3>
+                        <p style="margin-top: 0.5rem;">Archival sizing means your words outlast generations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION 4: FULL WIDTH CTA DEEP -->
+        <section class="section-overlap z-4"
+            style="background:var(--bg-dark); color: #F7F0E6; padding: 6rem 2rem; margin-top: -60px; text-align: center;">
+            <div class="section-divider-top" style="fill:var(--bg-dark);">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                        fill="var(--bg-dark)"></path>
+                </svg>
+            </div>
+
+            <div class="stagger-container float-pulse"
+                style="max-width: 600px; margin: 0 auto; position: relative; z-index: 2;">
+                <h2 class="stagger-item" style="color:var(--color-primary); font-size: 3rem; margin-bottom: 1rem;">
+                    Experience the Grain</h2>
+                <p class="stagger-item" style="color: var(--text-faint); margin-bottom: 2rem;">Holding it changes
+                    everything. Commission a custom batch today.</p>
+                <a href="contact.html" class="btn-primary stagger-item">Get in Touch</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
+                        <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+                    </svg>
+                    Foliage Studio
+                </div>
+                <p>Pressed. Crafted. Remembered.</p>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Explore</h3>
+                <nav class="footer-links">
+                    <a href="shop.html">Shop All</a>
+                    <a href="home-2.html">Premium Layout</a>
+                    <a href="product.html">Product Demo</a>
+                    <a href="pricing.html">Pricing Strategy</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Studio</h3>
+                <nav class="footer-links">
+                    <a href="contact.html">Contact Us</a>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Sign Up</a>
+                </nav>
+            </div>
+
+            <div>
+                <h3 class="footer-title">The Journal</h3>
+                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.
+                </p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="Email Address" class="newsletter-input" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Foliage Studio. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon social-facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-twitter" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            fill="none" />
+                    </svg>
+                </a>
+                <a href="#" class="social-icon social-linkedin" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Run observer for custom elements just in case, but they are bound by script.js -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const extraObserverOptions = { threshold: 0.2 };
+            const extraObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, extraObserverOptions);
+
+            document.querySelectorAll('.reveal-right, .slow-zoom').forEach(el => {
+                extraObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
