@@ -115,7 +115,11 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    padding-top: 38px; /* Height of the fixed header */
+}
+
+body {
+    padding-top: 38px;
+    /* Height of the fixed header */
 }
 
 /* Typography Rules */
@@ -133,7 +137,7 @@ h2 {
     font-size: clamp(1.8rem, 4vw, 3rem);
     font-style: italic;
     color: var(--text-ink);
-    text-shadow: 0 1px 1px rgba(0,0,0,0.03);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
 }
 
 h3 {
@@ -1516,6 +1520,22 @@ textarea.form-control {
     left: 2rem;
 }
 
+@media (max-width: 600px) {
+    .auth-page {
+        padding-top: 3.5rem;
+    }
+
+    .auth-toggles {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    [dir="rtl"] .auth-toggles {
+        left: 1rem;
+        right: auto;
+    }
+}
+
 .auth-card {
     width: 100%;
     max-width: 460px;
@@ -1778,13 +1798,13 @@ textarea.form-control {
     border-radius: var(--radius-sm);
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(.22, 1, .36, 1), box-shadow 0.4s ease;
-    border: 1px solid rgba(0,0,0,0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .product-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-float);
-    border-color: rgba(0,0,0,0.08);
+    border-color: rgba(0, 0, 0, 0.08);
 }
 
 .product-image-wrap {
@@ -1856,7 +1876,7 @@ textarea.form-control {
     color: var(--text-ink);
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .filter-list {
