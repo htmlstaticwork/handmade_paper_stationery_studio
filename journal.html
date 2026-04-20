@@ -137,9 +137,10 @@
 <body>
     <header class="site-header">
         <a href="index.html" class="brand-logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
-                <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L19 9C22 12 21 16 19 19C17 22 13 22 12 22C11 22 7 22 5 19C3 16 2 12 5 9L12 2Z" />
+                <path d="M12 22V14" />
+                <circle cx="12" cy="14" r="1" class="brand-dot" />
             </svg>
             Foliage Studio
         </a>
@@ -206,7 +207,7 @@
                     style="transition-delay: 0.15s; font-size: clamp(3.5rem, 8vw, 7rem); color: #F7F0E6; margin-bottom: 0.5rem; line-height: 1;">
                     The Journal</h1>
                 <p class="cascade-drop"
-                    style="transition-delay: 0.3s; font-size: 1.4rem; font-style: italic; color: rgba(247, 240, 230, 0.7); font-family: var(--font-display);">
+                    style="transition-delay: 0.3s; font-size: 1.4rem; font-style: italic; color: rgba(247, 240, 230, 0.7); font-family: var(--font-display); font-weight: 500;">
                     Notes on Craft, Water, & Time</p>
             </div>
             <div class="scroll-vibe"
@@ -338,13 +339,14 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="brand-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
-                        <circle cx="16" cy="7" r="1.5" class="brand-dot" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L19 9C22 12 21 16 19 19C17 22 13 22 12 22C11 22 7 22 5 19C3 16 2 12 5 9L12 2Z" />
+                <path d="M12 22V14" />
+                <circle cx="12" cy="14" r="1" class="brand-dot" />
+            </svg>
                     Foliage Studio
                 </div>
-                <p>Pressed. Crafted. Remembered.</p>
+                <p>Pressed. Crafted. Remembered. Our artisanal papers are born from old-world traditions and a deep reverence for the tactile nature of storytelling. Each sheet is hand-pulled in our studio, carrying the weight of history.</p>
             </div>
 
             <div>
@@ -368,10 +370,9 @@
 
             <div>
                 <h3 class="footer-title">The Journal</h3>
-                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.
-                </p>
+                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.</p>
                 <form class="newsletter-form" onsubmit="event.preventDefault()">
-                    <input type="email" placeholder="Email Address" class="newsletter-input" required>
+                    <input type="email" placeholder="Email Address" class="newsletter-input" required aria-label="Email Address">
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
             </div>

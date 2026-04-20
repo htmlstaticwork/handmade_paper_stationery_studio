@@ -117,9 +117,10 @@
 <body>
     <header class="site-header">
         <a href="index.html" class="brand-logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
-                <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L19 9C22 12 21 16 19 19C17 22 13 22 12 22C11 22 7 22 5 19C3 16 2 12 5 9L12 2Z" />
+                <path d="M12 22V14" />
+                <circle cx="12" cy="14" r="1" class="brand-dot" />
             </svg>
             Foliage Studio
         </a>
@@ -171,18 +172,74 @@
 
     <main>
         <!-- ABOUT SECTION 1: UNIQUE HERO TEXT REVEAL -->
-        <section class="page-header paper-texture stagger-container" style="padding-bottom: 8rem; position: relative;">
-            <svg class="floating-sheet-svg float-pulse" style="left: 10%; top: 20%; opacity: 0.3;"
-                viewBox="0 0 100 100">
-                <path d="M80 10 L20 30 L30 90 L90 70 Z" fill="var(--color-primary-light)" />
-            </svg>
+        <style>
+            .about-hero {
+                position: relative;
+                height: calc(100vh - 52px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                overflow: hidden;
+                color: #F7F0E6;
+            }
 
-            <h1 class="stagger-item reveal-right" style="font-size: clamp(3rem, 7vw, 6rem);">The Hands<br>Behind the Vat
-            </h1>
-            <p class="stagger-item"
-                style="margin-top:1rem; max-width: 600px; margin-left:auto; margin-right:auto; font-size: 1.2rem;">
-                Every sheet tells a story of intention, water, and time.
-            </p>
+            .about-hero-bg {
+                position: absolute;
+                inset: 0;
+                z-index: 0;
+            }
+
+            .about-hero-bg img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: scale(1.1);
+                animation: slowZoomOut 15s ease-out forwards;
+            }
+
+            @keyframes slowZoomOut {
+                to { transform: scale(1); }
+            }
+
+            .about-hero .hero-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to bottom, rgba(28, 20, 16, 0.4), rgba(28, 20, 16, 0.7));
+                z-index: 1;
+            }
+
+            .about-hero-content {
+                position: relative;
+                z-index: 10;
+                padding: 0 2rem;
+            }
+
+            .about-hero h1 {
+                color: #F7F0E6;
+                margin-bottom: 2rem;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+
+            .about-hero p {
+                max-width: 600px;
+                margin: 0 auto;
+                font-size: 1.25rem;
+                opacity: 0.9;
+                text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+            }
+        </style>
+
+        <section class="about-hero stagger-container">
+            <div class="about-hero-bg">
+                <img src="assets/images/our_studio_story.png" alt="Handmade paper studio background">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="about-hero-content">
+                <h1 class="stagger-item reveal-right" style="font-size: clamp(3rem, 7vw, 6rem);">The Hands<br>Behind the Vat</h1>
+                <p class="stagger-item">Every sheet tells a story of intention, water, and time.</p>
+            </div>
         </section>
 
         <!-- ABOUT SECTION 2: SLOW ZOOM PROCESS -->
@@ -235,10 +292,8 @@
                             <path d="M12 2v20" />
                             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                         </svg>
-                        <h3 style="margin-top: 1rem; font-family:var(--font-display); font-size:1.8rem;">Sustainability
-                        </h3>
-                        <p style="margin-top: 0.5rem;">Foraging local botanicals and utilizing zero-chemical pulp
-                            reduction.</p>
+                        <h3>Sustainability</h3>
+                        <p>Foraging local botanicals and utilizing zero-chemical pulp reduction.</p>
                     </div>
                     <div class="value-card stagger-item">
                         <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
@@ -247,9 +302,8 @@
                             <circle cx="12" cy="12" r="10" />
                             <path d="m9 12 2 2 4-4" />
                         </svg>
-                        <h3 style="margin-top: 1rem; font-family:var(--font-display); font-size:1.8rem;">Tactility</h3>
-                        <p style="margin-top: 0.5rem;">Ensuring every sheet has the weight and tooth to challenge
-                            digital perfection.</p>
+                        <h3>Tactility</h3>
+                        <p>Ensuring every sheet has the weight and tooth to challenge digital perfection.</p>
                     </div>
                     <div class="value-card stagger-item">
                         <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
@@ -258,8 +312,8 @@
                             <polygon
                                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                         </svg>
-                        <h3 style="margin-top: 1rem; font-family:var(--font-display); font-size:1.8rem;">Longevity</h3>
-                        <p style="margin-top: 0.5rem;">Archival sizing means your words outlast generations.</p>
+                        <h3>Longevity</h3>
+                        <p>Archival sizing means your words outlast generations.</p>
                     </div>
                 </div>
             </div>
@@ -293,13 +347,14 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="brand-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
-                        <circle cx="16" cy="7" r="1.5" class="brand-dot" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L19 9C22 12 21 16 19 19C17 22 13 22 12 22C11 22 7 22 5 19C3 16 2 12 5 9L12 2Z" />
+                <path d="M12 22V14" />
+                <circle cx="12" cy="14" r="1" class="brand-dot" />
+            </svg>
                     Foliage Studio
                 </div>
-                <p>Pressed. Crafted. Remembered.</p>
+                <p>Pressed. Crafted. Remembered. Our artisanal papers are born from old-world traditions and a deep reverence for the tactile nature of storytelling. Each sheet is hand-pulled in our studio, carrying the weight of history.</p>
             </div>
 
             <div>
@@ -323,10 +378,9 @@
 
             <div>
                 <h3 class="footer-title">The Journal</h3>
-                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.
-                </p>
+                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.</p>
                 <form class="newsletter-form" onsubmit="event.preventDefault()">
-                    <input type="email" placeholder="Email Address" class="newsletter-input" required>
+                    <input type="email" placeholder="Email Address" class="newsletter-input" required aria-label="Email Address">
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
             </div>

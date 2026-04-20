@@ -147,9 +147,10 @@
 <body>
     <header class="site-header">
         <a href="index.html" class="brand-logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
-                <circle cx="16" cy="7" r="1.5" class="brand-dot" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L19 9C22 12 21 16 19 19C17 22 13 22 12 22C11 22 7 22 5 19C3 16 2 12 5 9L12 2Z" />
+                <path d="M12 22V14" />
+                <circle cx="12" cy="14" r="1" class="brand-dot" />
             </svg>
             Foliage Studio
         </a>
@@ -198,8 +199,16 @@
         </div>
     </header>
 
-    <main style="padding: 4rem 2rem;">
-        <div class="product-page-layout stagger-container">
+    <main>
+        <!-- PAGE HEADER -->
+        <section class="page-header paper-texture stagger-container">
+            <h1 class="stagger-item">Product Details</h1>
+            <p class="stagger-item" style="margin-top:1rem; max-width: 600px; margin-left:auto; margin-right:auto;">
+                Explore material, texture, and craftsmanship notes for this handcrafted piece before you add it to your collection.</p>
+        </section>
+
+        <section style="padding: 4rem 2rem;">
+            <div class="product-page-layout stagger-container">
             <!-- Gallery -->
             <div class="product-gallery stagger-item">
                 <img src="assets/images/prod_sage.png" alt="Sage Pressed Cotton Suite" class="product-main-img">
@@ -251,7 +260,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+        </section>
         <!-- PRODUCT SECTION 1: TACTILE DETAIL -->
         <section class="section-overlap z-1 paper-texture" style="background:var(--bg-surface); padding: 8rem 2rem;">
             <div class="grid grid-2 stagger-container" style="align-items: center;">
@@ -323,13 +333,14 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="brand-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 2C8 6 4 12 8 18c2.5 3.5 6.5 4 8 0 4-10-4-16-4-16z" />
-                        <circle cx="16" cy="7" r="1.5" class="brand-dot" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L19 9C22 12 21 16 19 19C17 22 13 22 12 22C11 22 7 22 5 19C3 16 2 12 5 9L12 2Z" />
+                <path d="M12 22V14" />
+                <circle cx="12" cy="14" r="1" class="brand-dot" />
+            </svg>
                     Foliage Studio
                 </div>
-                <p>Pressed. Crafted. Remembered.</p>
+                <p>Pressed. Crafted. Remembered. Our artisanal papers are born from old-world traditions and a deep reverence for the tactile nature of storytelling. Each sheet is hand-pulled in our studio, carrying the weight of history.</p>
             </div>
 
             <div>
@@ -353,10 +364,9 @@
 
             <div>
                 <h3 class="footer-title">The Journal</h3>
-                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.
-                </p>
+                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.</p>
                 <form class="newsletter-form" onsubmit="event.preventDefault()">
-                    <input type="email" placeholder="Email Address" class="newsletter-input" required>
+                    <input type="email" placeholder="Email Address" class="newsletter-input" required aria-label="Email Address">
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
             </div>
