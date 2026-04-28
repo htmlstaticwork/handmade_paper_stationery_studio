@@ -38,7 +38,8 @@
     <!-- Global Header -->
     <header class="site-header">
         <a href="index.html" class="brand-logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2L19 9C22 12 21 16 19 19C17 22 13 22 12 22C11 22 7 22 5 19C3 16 2 12 5 9L12 2Z" />
                 <path d="M12 22V14" />
                 <circle cx="12" cy="14" r="1" class="brand-dot" />
@@ -134,9 +135,18 @@
             }
 
             @media (max-width: 1024px) {
-                .new-hero { height: auto; padding: 4rem 0; }
-                .new-hero-grid { grid-template-columns: 1fr; }
-                .hero-bg-accent { display: none; }
+                .new-hero {
+                    height: auto;
+                    padding: 4rem 0;
+                }
+
+                .new-hero-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .hero-bg-accent {
+                    display: none;
+                }
             }
 
             .hero-text-content {
@@ -213,8 +223,15 @@
             }
 
             @keyframes floatUp {
-                0%, 100% { transform: translateY(0); }
-                50% { transform: translateY(-15px); }
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-15px);
+                }
             }
 
             .hero-floating-card h4 {
@@ -246,28 +263,80 @@
                 z-index: 0;
             }
 
-            .hero-ctas {
+            .new-hero .hero-ctas {
                 display: flex;
                 gap: 2rem;
                 align-items: center;
+                justify-content: flex-start !important;
+                width: 100%;
             }
 
             @media (max-width: 1024px) {
-                .new-hero { height: auto; min-height: calc(100vh - 52px); padding: 6rem 0 4rem; }
-                .new-hero-grid { grid-template-columns: 1fr; width: 100%; max-width: 100%; }
-                .hero-bg-accent { display: none; }
-                .hero-text-content { padding: 0 2rem; }
-                .hero-images-container { padding-right: 0; margin-top: 3rem; }
+                .new-hero {
+                    height: auto;
+                    min-height: calc(100vh - 52px);
+                    padding: 6rem 0 4rem;
+                }
+
+                .new-hero-grid {
+                    grid-template-columns: 1fr;
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                .hero-bg-accent {
+                    display: none;
+                }
+
+                .hero-text-content {
+                    padding: 0 2rem;
+                }
+
+                .hero-images-container {
+                    padding-right: 0;
+                    margin-top: 3rem;
+                }
             }
 
             @media (max-width: 768px) {
-                .hero-text-content { padding: 0 1.5rem; text-align: center; }
-                .hero-text-content h1 { font-size: clamp(3rem, 12vw, 4.5rem); margin-bottom: 2rem; line-height: 1.1; }
-                .hero-text-content h1 .accent-word { margin-left: 0; display: block; }
-                .hero-text-content p { margin: 0 auto 3rem; border-left: none; border-top: 2px solid var(--color-primary-light); padding: 1.5rem 0 0 0; }
-                .hero-ctas { justify-content: flex-start; gap: 1rem; }
-                .hero-images-container { height: auto; min-height: 300px; margin-top: 4rem; }
-                .hero-img-stack { height: 100%; width: 100%; }
+                .hero-text-content {
+                    padding: 0 1.5rem;
+                    text-align: center;
+                }
+
+                .hero-text-content h1 {
+                    font-size: clamp(3rem, 12vw, 4.5rem);
+                    margin-bottom: 2rem;
+                    line-height: 1.1;
+                }
+
+                .hero-text-content h1 .accent-word {
+                    margin-left: 0;
+                    display: block;
+                }
+
+                .hero-text-content p {
+                    margin: 0 auto 3rem;
+                    border-left: none;
+                    border-top: 2px solid var(--color-primary-light);
+                    padding: 1.5rem 0 0 0;
+                }
+
+                .new-hero .hero-ctas {
+                    justify-content: flex-start !important;
+                    gap: 1rem;
+                }
+
+                .hero-images-container {
+                    height: auto;
+                    min-height: 300px;
+                    margin-top: 4rem;
+                }
+
+                .hero-img-stack {
+                    height: 100%;
+                    width: 100%;
+                }
             }
 
             @media (max-width: 768px) {
@@ -275,7 +344,7 @@
                     width: 100%;
                 }
 
-                #home-studio-story .about-split > * {
+                #home-studio-story .about-split>* {
                     min-width: 0;
                 }
 
@@ -291,7 +360,7 @@
         <section class="new-hero">
             <div class="hero-bg-accent"></div>
             <div class="hero-glow"></div>
-            
+
             <div class="new-hero-grid">
                 <div class="hero-text-content">
                     <h1 class="sweep-in">
@@ -309,7 +378,7 @@
                 <div class="hero-images-container">
                     <div class="hero-img-stack">
                         <img src="assets/images/handmade_paper_hero.png" alt="Handmade Paper" class="hero-img-main">
-                        
+
                     </div>
                 </div>
             </div>
@@ -463,17 +532,26 @@
             <div class="stagger-container">
                 <div style="max-width: 600px; margin: 0 auto 4rem;">
                     <h3 class="stagger-item">Word of Mouth</h3>
-                    <h2 class="stagger-item" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-top: 1rem;">Client Experiences</h2>
-                    <p class="stagger-item" style="color: var(--text-ink); font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 600;">Notes from those who have shared our journey into paper and light.</p>
+                    <h2 class="stagger-item" style="font-size: clamp(2rem, 5vw, 3.5rem); margin-top: 1rem;">Client
+                        Experiences</h2>
+                    <p class="stagger-item"
+                        style="color: var(--text-ink); font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 600;">
+                        Notes from those who have shared our journey into paper and light.</p>
                 </div>
-                
+
                 <div class="testimonial-grid stagger-container">
                     <div class="testimonial-card stagger-item alternate">
                         <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-text">"The paper feels like absolute poetry. I've been using it for all my high-end wedding invitations and my clients always swoon when they touch the envelopes."</p>
+                        <p class="testimonial-text">"The paper feels like absolute poetry. I've been using it for all my
+                            high-end wedding invitations and my clients always swoon when they touch the envelopes."</p>
                         <div class="testimonial-meta">
                             <div class="author-init">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
                             </div>
                             <div class="author-info">
                                 <p class="testimonial-author">Eleanor R.</p>
@@ -484,10 +562,17 @@
 
                     <div class="testimonial-card stagger-item">
                         <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-text">"Finding Foliage Studio was a revelation for my calligraphy practice. The internal sizing keeps my nibs from catching, even on the most textured sheets."</p>
+                        <p class="testimonial-text">"Finding Foliage Studio was a revelation for my calligraphy
+                            practice. The internal sizing keeps my nibs from catching, even on the most textured
+                            sheets."</p>
                         <div class="testimonial-meta">
                             <div class="author-init">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
                             </div>
                             <div class="author-info">
                                 <p class="testimonial-author">Julian W.</p>
@@ -498,10 +583,16 @@
 
                     <div class="testimonial-card stagger-item alternate">
                         <div class="testimonial-stars">★★★★★</div>
-                        <p class="testimonial-text">"There is an unmistakable intention in every sheet. Our brand guide required something that felt ancestral yet modern, and these papers are exactly that."</p>
+                        <p class="testimonial-text">"There is an unmistakable intention in every sheet. Our brand guide
+                            required something that felt ancestral yet modern, and these papers are exactly that."</p>
                         <div class="testimonial-meta">
                             <div class="author-init">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
                             </div>
                             <div class="author-info">
                                 <p class="testimonial-author">Mariah K.</p>
@@ -535,14 +626,17 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="brand-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2L19 9C22 12 21 16 19 19C17 22 13 22 12 22C11 22 7 22 5 19C3 16 2 12 5 9L12 2Z" />
-                <path d="M12 22V14" />
-                <circle cx="12" cy="14" r="1" class="brand-dot" />
-            </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L19 9C22 12 21 16 19 19C17 22 13 22 12 22C11 22 7 22 5 19C3 16 2 12 5 9L12 2Z" />
+                        <path d="M12 22V14" />
+                        <circle cx="12" cy="14" r="1" class="brand-dot" />
+                    </svg>
                     Foliage Studio
                 </div>
-                <p>Pressed. Crafted. Remembered. Our artisanal papers are born from old-world traditions and a deep reverence for the tactile nature of storytelling. Each sheet is hand-pulled in our studio, carrying the weight of history.</p>
+                <p>Pressed. Crafted. Remembered. Our artisanal papers are born from old-world traditions and a deep
+                    reverence for the tactile nature of storytelling. Each sheet is hand-pulled in our studio, carrying
+                    the weight of history.</p>
             </div>
 
             <div>
@@ -566,9 +660,11 @@
 
             <div>
                 <h3 class="footer-title">The Journal</h3>
-                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.</p>
+                <p style="font-size:0.9rem; margin-bottom: 0.5rem;">Sign up for studio updates and exclusive releases.
+                </p>
                 <form class="newsletter-form" onsubmit="event.preventDefault()">
-                    <input type="email" placeholder="Email Address" class="newsletter-input" required aria-label="Email Address">
+                    <input type="email" placeholder="Email Address" class="newsletter-input" required
+                        aria-label="Email Address">
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
             </div>
